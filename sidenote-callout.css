@@ -288,3 +288,41 @@ body:not(.top-sidenote-callout-title) .setting-item[data-id="top-right-sidenote-
     margin: 0 auto;
   }
 }
+
+/* 添加媒体查询，处理小屏幕设备 */
+@media screen and (max-width: 1000px) {
+  .callout[data-callout-metadata*="aside"] {
+    position: relative;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    margin: 1rem 0;
+  }
+
+  .callout[data-callout-metadata*="aside"] .callout-title {
+    border-right: none;
+    border-bottom: 3px solid;
+    text-align: left;
+    height: auto;
+  }
+
+  .callout[data-callout-metadata*="aside"] .callout-title-inner {
+    width: auto;
+    margin: 0;
+  }
+
+  .callout[data-callout-metadata*="aside"] {
+    grid-template-columns: 1fr;
+  }
+
+  .callout[data-callout-metadata*="aside"]>.callout-content {
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  /* 调整内容区域的宽度 */
+  div:not(.callout-content)>p {
+    width: 100%;
+    margin: 0;
+  }
+}
